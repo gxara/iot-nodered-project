@@ -7,37 +7,6 @@
         "info": ""
     },
     {
-        "id": "116607840886ece1",
-        "type": "tab",
-        "label": "Flow 2",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "e237f4a1.bd2cd",
-        "type": "tab",
-        "label": "Sheet 1"
-    },
-    {
-        "id": "6de0314419086f46",
-        "type": "tab",
-        "label": "Sheet 1"
-    },
-    {
-        "id": "224e8e6af9e96c1a",
-        "type": "coap-server",
-        "name": "Gateway",
-        "port": "5683",
-        "ipv6": false
-    },
-    {
-        "id": "6e81bde6a145e3c9",
-        "type": "coap-server",
-        "name": "Hello CoAP Server",
-        "port": "5683"
-    },
-    {
         "id": "381a0a1f9b485252",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
@@ -1365,5 +1334,11 @@
                 "f2c43cde461e42b1"
             ]
         ]
+    },
+    {
+        "id": "6e81bde6a145e3c9",
+        "type": "coap-server",
+        "name": "Hello CoAP Server",
+        "port": "5683"
     }
 ]
