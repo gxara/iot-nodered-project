@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node node_modules/node-red/red.js -v -u ."
+  },
+  "dependencies": {
+    "node-red": "^2.2.2",
+    "node-red-contrib-coap": "~0.6.0",
+    "random-generator_node-red-contrib": "~1.0.0"
+  }
+}

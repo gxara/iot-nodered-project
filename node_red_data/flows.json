@@ -1,0 +1,382 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "116607840886ece1",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e237f4a1.bd2cd",
+        "type": "tab",
+        "label": "Sheet 1"
+    },
+    {
+        "id": "6de0314419086f46",
+        "type": "tab",
+        "label": "Sheet 1"
+    },
+    {
+        "id": "224e8e6af9e96c1a",
+        "type": "coap-server",
+        "name": "Gateway",
+        "port": "5683",
+        "ipv6": false
+    },
+    {
+        "id": "6e81bde6a145e3c9",
+        "type": "coap-server",
+        "name": "Hello CoAP Server",
+        "port": "5683"
+    },
+    {
+        "id": "381a0a1f9b485252",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Trigger Temperature Sensors",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "4",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 450,
+        "y": 680,
+        "wires": [
+            [
+                "714e1cebfb610978",
+                "d4880cbeabf558bb",
+                "5d9fd71810737054",
+                "ec115b4e8d7816f4"
+            ]
+        ]
+    },
+    {
+        "id": "714e1cebfb610978",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Temperature Sensor 1",
+        "minimum": "20",
+        "maximum": "30",
+        "roundTo": "0",
+        "Floor": true,
+        "x": 780,
+        "y": 580,
+        "wires": [
+            [
+                "041fde66e03ee140"
+            ]
+        ]
+    },
+    {
+        "id": "d4880cbeabf558bb",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Temperature Sensor 2",
+        "minimum": "20",
+        "maximum": "32",
+        "roundTo": "2",
+        "Floor": false,
+        "x": 780,
+        "y": 640,
+        "wires": [
+            [
+                "041fde66e03ee140"
+            ]
+        ]
+    },
+    {
+        "id": "5d9fd71810737054",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Temperature Sensor 3",
+        "minimum": "20",
+        "maximum": "32",
+        "roundTo": "2",
+        "Floor": false,
+        "x": 780,
+        "y": 700,
+        "wires": [
+            [
+                "041fde66e03ee140"
+            ]
+        ]
+    },
+    {
+        "id": "ec115b4e8d7816f4",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Temperature Sensor 4",
+        "minimum": "20",
+        "maximum": "32",
+        "roundTo": "2",
+        "Floor": false,
+        "x": 780,
+        "y": 760,
+        "wires": [
+            [
+                "041fde66e03ee140"
+            ]
+        ]
+    },
+    {
+        "id": "b283348e1ddf7af1",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Trigger Illumination Sensors",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 440,
+        "y": 980,
+        "wires": [
+            [
+                "c914d2a0afdf89ba",
+                "70c880aee2402bf8",
+                "1af3b92159e37c8d",
+                "7036571f125f780a"
+            ]
+        ]
+    },
+    {
+        "id": "c914d2a0afdf89ba",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Illumination Sensor 1",
+        "minimum": "20",
+        "maximum": "32",
+        "roundTo": "2",
+        "Floor": false,
+        "x": 780,
+        "y": 880,
+        "wires": [
+            [
+                "901c75ae80397ecb"
+            ]
+        ]
+    },
+    {
+        "id": "70c880aee2402bf8",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Illumination Sensor 2",
+        "minimum": "20",
+        "maximum": "32",
+        "roundTo": "2",
+        "Floor": false,
+        "x": 780,
+        "y": 940,
+        "wires": [
+            [
+                "901c75ae80397ecb"
+            ]
+        ]
+    },
+    {
+        "id": "1af3b92159e37c8d",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Illumination Sensor 3",
+        "minimum": "20",
+        "maximum": "32",
+        "roundTo": "2",
+        "Floor": false,
+        "x": 780,
+        "y": 1000,
+        "wires": [
+            [
+                "901c75ae80397ecb"
+            ]
+        ]
+    },
+    {
+        "id": "7036571f125f780a",
+        "type": "Number",
+        "z": "f6f2187d.f17ca8",
+        "name": "Illumination Sensor 4",
+        "minimum": "20",
+        "maximum": "32",
+        "roundTo": "2",
+        "Floor": false,
+        "x": 780,
+        "y": 1060,
+        "wires": [
+            [
+                "901c75ae80397ecb"
+            ]
+        ]
+    },
+    {
+        "id": "041fde66e03ee140",
+        "type": "coap request",
+        "z": "f6f2187d.f17ca8",
+        "method": "POST",
+        "observe": false,
+        "multicast": false,
+        "multicastTimeout": 20000,
+        "url": "coap://localhost/temperature",
+        "content-format": "application/json",
+        "raw-buffer": false,
+        "name": "Send temperature [COAP]",
+        "x": 1170,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0c8d9bd0f563e52",
+        "type": "coap in",
+        "z": "f6f2187d.f17ca8",
+        "method": "POST",
+        "name": "",
+        "server": "6e81bde6a145e3c9",
+        "url": "/temperature",
+        "x": 790,
+        "y": 140,
+        "wires": [
+            [
+                "067b399ec8babbcf"
+            ]
+        ]
+    },
+    {
+        "id": "067b399ec8babbcf",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "\nreturn {\"x\": \"Received temperature update\", \"value\": msg.req.payload.toString(), \"origin\": msg.req};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 140,
+        "wires": [
+            [
+                "3a895c8ff4f0c558"
+            ]
+        ]
+    },
+    {
+        "id": "3a895c8ff4f0c558",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1250,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b75692594eb4a9bf",
+        "type": "coap in",
+        "z": "f6f2187d.f17ca8",
+        "method": "POST",
+        "name": "",
+        "server": "6e81bde6a145e3c9",
+        "url": "/illumination",
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "fa03c24629492ee5"
+            ]
+        ]
+    },
+    {
+        "id": "fa03c24629492ee5",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "\nreturn {\"x\": \"Received illumination update\", \"value\": msg.req.payload.toString(), \"origin\": msg.req};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 220,
+        "wires": [
+            [
+                "dc54c58f9464bd0d"
+            ]
+        ]
+    },
+    {
+        "id": "dc54c58f9464bd0d",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1250,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "901c75ae80397ecb",
+        "type": "coap request",
+        "z": "f6f2187d.f17ca8",
+        "method": "POST",
+        "observe": false,
+        "multicast": false,
+        "multicastTimeout": 20000,
+        "url": "coap://localhost/illumination",
+        "content-format": "application/json",
+        "raw-buffer": false,
+        "name": "Send illumination [COAP]",
+        "x": 1170,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "173982a0b32ab193",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "info": "# Teste",
+        "x": 480,
+        "y": 240,
+        "wires": []
+    }
+]
