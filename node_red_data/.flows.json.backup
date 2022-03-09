@@ -7,31 +7,6 @@
         "info": ""
     },
     {
-        "id": "116607840886ece1",
-        "type": "tab",
-        "label": "Flow 2",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "e237f4a1.bd2cd",
-        "type": "tab",
-        "label": "Sheet 1"
-    },
-    {
-        "id": "6de0314419086f46",
-        "type": "tab",
-        "label": "Sheet 1"
-    },
-    {
-        "id": "224e8e6af9e96c1a",
-        "type": "coap-server",
-        "name": "Gateway",
-        "port": "5683",
-        "ipv6": false
-    },
-    {
         "id": "6e81bde6a145e3c9",
         "type": "coap-server",
         "name": "Hello CoAP Server",
@@ -255,8 +230,8 @@
         "name": "",
         "server": "6e81bde6a145e3c9",
         "url": "/temperature",
-        "x": 790,
-        "y": 80,
+        "x": 410,
+        "y": 160,
         "wires": [
             [
                 "067b399ec8babbcf"
@@ -268,17 +243,18 @@
         "type": "function",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "func": "\nreturn {\"x\": \"Received temperature update\", \"value\": msg.req.payload.toString(), \"origin\": msg.req};",
+        "func": "\n// return {\"x\": \"Received temperature update\", \"value\": msg.req.payload.toString(), \"origin\": msg.req};\n\nconst messageContent = JSON.parse(msg.req.payload)\n// return {\n//     \"payload\": {\n//         \"x\": `Received player ${messageContent.playerId} data`,\n//         \"data\":messageContent,\n//         \"origin\": msg.req\n//     }\n// };\n\nreturn {payload: {temperature: messageContent}}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 80,
+        "x": 660,
+        "y": 160,
         "wires": [
             [
-                "3a895c8ff4f0c558"
+                "3a895c8ff4f0c558",
+                "d57368faef989ed3"
             ]
         ]
     },
@@ -295,8 +271,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1190,
-        "y": 40,
+        "x": 810,
+        "y": 120,
         "wires": []
     },
     {
@@ -307,8 +283,8 @@
         "name": "",
         "server": "6e81bde6a145e3c9",
         "url": "/illumination",
-        "x": 790,
-        "y": 160,
+        "x": 410,
+        "y": 240,
         "wires": [
             [
                 "fa03c24629492ee5"
@@ -320,17 +296,18 @@
         "type": "function",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "func": "\nreturn {\"x\": \"Received illumination update\", \"value\": msg.req.payload.toString(), \"origin\": msg.req};",
+        "func": "\n// return {\"x\": \"Received illumination update\", \"value\": msg.req.payload.toString(), \"origin\": msg.req};\n\nconst messageContent = JSON.parse(msg.req.payload)\n// return {\n//     \"payload\": {\n//         \"x\": `Received player ${messageContent.playerId} data`,\n//         \"data\":messageContent,\n//         \"origin\": msg.req\n//     }\n// };\n\nreturn {payload: {illumination: messageContent}}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 160,
+        "x": 660,
+        "y": 240,
         "wires": [
             [
-                "dc54c58f9464bd0d"
+                "dc54c58f9464bd0d",
+                "8469a1d786a2355d"
             ]
         ]
     },
@@ -339,7 +316,7 @@
         "type": "debug",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -347,8 +324,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1170,
-        "y": 200,
+        "x": 790,
+        "y": 280,
         "wires": []
     },
     {
@@ -375,8 +352,8 @@
         "z": "f6f2187d.f17ca8",
         "name": "Collecting stadium information",
         "info": "# Teste",
-        "x": 400,
-        "y": 440,
+        "x": 420,
+        "y": 540,
         "wires": []
     },
     {
@@ -395,8 +372,8 @@
         "z": "f6f2187d.f17ca8",
         "name": "Collecting players information",
         "info": "# Teste",
-        "x": 380,
-        "y": 1220,
+        "x": 580,
+        "y": 1240,
         "wires": []
     },
     {
@@ -434,8 +411,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 310,
-        "y": 1620,
+        "x": 490,
+        "y": 1600,
         "wires": [
             [
                 "201004282ad78fbe",
@@ -460,8 +437,8 @@
         "name": "",
         "server": "6e81bde6a145e3c9",
         "url": "/player-data",
-        "x": 790,
-        "y": 240,
+        "x": 410,
+        "y": 320,
         "wires": [
             [
                 "c746672854055a94"
@@ -479,8 +456,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 240,
+        "x": 640,
+        "y": 320,
         "wires": [
             [
                 "b3688121c9ebc473",
@@ -493,7 +470,7 @@
         "type": "debug",
         "z": "f6f2187d.f17ca8",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -501,8 +478,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1170,
-        "y": 280,
+        "x": 790,
+        "y": 360,
         "wires": []
     },
     {
@@ -541,7 +518,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1320,
         "wires": [
             [
@@ -561,7 +538,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1320,
         "wires": [
             []
@@ -617,7 +594,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1380,
         "wires": [
             [
@@ -675,7 +652,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1440,
         "wires": [
             [
@@ -733,7 +710,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1500,
         "wires": [
             [
@@ -791,7 +768,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1560,
         "wires": [
             [
@@ -849,7 +826,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1620,
         "wires": [
             [
@@ -907,7 +884,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1680,
         "wires": [
             [
@@ -965,7 +942,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1740,
         "wires": [
             [
@@ -1023,7 +1000,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1800,
         "wires": [
             [
@@ -1081,7 +1058,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1860,
         "wires": [
             [
@@ -1139,7 +1116,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1640,
+        "x": 1600,
         "y": 1920,
         "wires": [
             [
@@ -1159,7 +1136,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1380,
         "wires": [
             []
@@ -1177,7 +1154,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1440,
         "wires": [
             []
@@ -1195,7 +1172,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1500,
         "wires": [
             []
@@ -1213,7 +1190,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1560,
         "wires": [
             []
@@ -1231,7 +1208,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1620,
         "wires": [
             []
@@ -1249,7 +1226,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1680,
         "wires": [
             []
@@ -1267,7 +1244,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1740,
         "wires": [
             []
@@ -1285,7 +1262,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1800,
         "wires": [
             []
@@ -1303,7 +1280,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1860,
         "wires": [
             []
@@ -1321,7 +1298,7 @@
         "content-format": "application/json",
         "raw-buffer": false,
         "name": "Send player physiological data [COAP]",
-        "x": 2110,
+        "x": 1950,
         "y": 1920,
         "wires": [
             []
@@ -1332,13 +1309,13 @@
         "type": "file",
         "z": "f6f2187d.f17ca8",
         "name": "Generate Report",
-        "filename": "collected_data__soccer_match.csv",
+        "filename": "collected_data__player_data.csv",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "utf8",
-        "x": 1910,
-        "y": 200,
+        "x": 1170,
+        "y": 320,
         "wires": [
             []
         ]
@@ -1350,7 +1327,7 @@
         "name": "",
         "sep": ",",
         "hdrin": "",
-        "hdrout": "all",
+        "hdrout": "once",
         "multi": "one",
         "ret": "\\n",
         "temp": "",
@@ -1358,12 +1335,90 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 1590,
-        "y": 240,
+        "x": 970,
+        "y": 320,
         "wires": [
             [
                 "f2c43cde461e42b1"
             ]
+        ]
+    },
+    {
+        "id": "8469a1d786a2355d",
+        "type": "csv",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 970,
+        "y": 240,
+        "wires": [
+            [
+                "6a0995a5d4aac740"
+            ]
+        ]
+    },
+    {
+        "id": "d57368faef989ed3",
+        "type": "csv",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 970,
+        "y": 160,
+        "wires": [
+            [
+                "3949f93fedda7b4d"
+            ]
+        ]
+    },
+    {
+        "id": "6a0995a5d4aac740",
+        "type": "file",
+        "z": "f6f2187d.f17ca8",
+        "name": "Generate Report",
+        "filename": "collected_data__illumination.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1170,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3949f93fedda7b4d",
+        "type": "file",
+        "z": "f6f2187d.f17ca8",
+        "name": "Generate Report",
+        "filename": "collected_data__temperature.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1170,
+        "y": 160,
+        "wires": [
+            []
         ]
     }
 ]
